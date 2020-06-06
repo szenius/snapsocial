@@ -1,0 +1,2 @@
+# snapsocial
+A human Pokedex!
