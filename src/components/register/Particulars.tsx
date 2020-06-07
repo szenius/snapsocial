@@ -14,15 +14,15 @@ export const Particulars: FunctionComponent<IParticularsProps> = ({
 }) => (
   <View style={styles.container}>
     <View style={styles.inputWrapper}>
-      <Text style={styles.inputLabel}>Your name:</Text>
+      <Text style={styles.inputLabel}>Your name</Text>
       <TextInput style={styles.inputBox} onChangeText={setHumanName} />
     </View>
     <View style={styles.inputWrapper}>
-      <Text style={styles.inputLabel}>Your url:</Text>
+      <Text style={styles.inputLabel}>Your url</Text>
       <TextInput style={styles.inputBox} onChangeText={setHumanUrl} />
     </View>
     <View style={styles.buttonWrapper}>
-      <Button title="Done" onPress={onSubmit} />
+      <Button title="Next" onPress={onSubmit} />
     </View>
   </View>
 );

@@ -4,6 +4,7 @@ import { CameraCapturedPicture } from "expo-camera";
 import { Particulars } from "./Particulars";
 import { RegisterSucess } from "./RegisterSuccess";
 import { IHuman } from "../../context/PopulationContextProvider";
+import { Alert } from "react-native";
 
 enum RegisterStage {
   Particulars,
@@ -36,11 +37,23 @@ export const RegisterScreen = () => {
       const setHumanUrl = (input: string) => {
         setHuman({ ...human, url: input });
       };
+      const onSubmit = () => {
+        if (human.name && human.url) {
+          setStage(RegisterStage.Photo);
+        } else {
+          Alert.alert(
+            "Error",
+            "Please fill in both your name and URL!",
+            [{ text: "Dismiss", onPress: () => {} }],
+            { cancelable: true }
+          );
+        }
+      };
       return (
         <Particulars
           setHumanName={setHumanName}
           setHumanUrl={setHumanUrl}
-          onSubmit={() => setStage(RegisterStage.Photo)}
+          onSubmit={onSubmit}
         />
       );
   }
